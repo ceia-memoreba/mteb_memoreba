@@ -1,0 +1,11 @@
+version: '1'
+services:
+  mtebservice:
+    build:
+      context: .
+      dockerfile: Python.Dockerfile
+    volumes:
+      - ./code:/mteb-amanda-container/code-container
+    environment:
+      - PIP_NO_CACHE_DIR=1
+    
