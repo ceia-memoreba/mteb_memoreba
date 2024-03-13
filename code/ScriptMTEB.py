@@ -389,7 +389,7 @@ for model_name in models:
     try:
         model = SentenceTransformer(model_name)
     except Exception as e:
-            logger.error(f"Error while model {model_name}/{task}: {e}")
+            logger.error(f"Error while model {model_name}: {e}")
     for task in TASK_LIST:
         try:
             logger.info(f"Running task: {task}")
