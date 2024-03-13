@@ -245,7 +245,6 @@ models = [
     "ClayAtlas/winberta-base",
     "ClayAtlas/winberta-large",
     "ClayAtlas/windberta-large",
-    "Cohere/Cohere-embed-english-light-v3.0",
     "Cohere/Cohere-embed-multilingual-light-v3.0",
     "Cohere/Cohere-embed-multilingual-v3.0",
     "EdwardBurgin/paraphrase-multilingual-mpnet-base-v2",
@@ -387,13 +386,15 @@ TASK_LIST = (
 )
 
 for model_name in models:
-    model = SentenceTransformer(model_name)
+    try:
+        model = SentenceTransformer(model_name)
+    except Exception as e:
+            logger.error(f"Error while model {model_name}/{task}: {e}")
     for task in TASK_LIST:
-        logger.info(f"Running task: {task}")
-        eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
-        evaluation = MTEB(
-            tasks=[task], task_langs=["pt"]
-        )  # Remove "en" for running all languages
-        evaluation.run(
-            model, output_folder=f"results/{model_name}", eval_splits=eval_splits
-        )
+        try:
+            logger.info(f"Running task: {task}")
+            eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
+            evaluation = MTEB(tasks=[task], task_langs=["pt"])  # Remove "en" for running all languages
+            evaluation.run(model, model_name, output_folder=f"results/{model_name}", eval_splits=eval_splits)
+        except Exception as e:
+            logger.error(f"Error while evaluating {model_name}/{task}: {e}")
