@@ -386,10 +386,6 @@ TASK_LIST = (
     + TASK_LIST_STS
 )
 
-
-models = ["average_word_embeddings_komninos"]
-
-
 for model_name in models:
     model = SentenceTransformer(model_name)
     for task in TASK_LIST:
