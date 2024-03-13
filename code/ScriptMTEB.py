@@ -389,12 +389,13 @@ for model_name in models:
     try:
         model = SentenceTransformer(model_name)
     except Exception as e:
-            logger.error(f"Error while model {model_name}: {e}")
-    for task in TASK_LIST:
-        try:
-            logger.info(f"Running task: {task}")
-            eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
-            evaluation = MTEB(tasks=[task], task_langs=["pt"])  # Remove "en" for running all languages
-            evaluation.run(model, model_name, output_folder=f"results/{model_name}", eval_splits=eval_splits)
-        except Exception as e:
-            logger.error(f"Error while evaluating {model_name}/{task}: {e}")
+        logger.error(f"Error while evaluating model {model_name}: {e}")
+    else:
+        for task in TASK_LIST:
+            try:
+                logger.info(f"Running task: {task}")
+                eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
+                evaluation = MTEB(tasks=[task], task_langs=["pt"])  # Remove "en" for running all languages
+                evaluation.run(model, model_name, output_folder=f"results/{model_name}", eval_splits=eval_splits)
+            except Exception as e:
+                logger.error(f"Error while evaluating {model_name}/{task}: {e}")

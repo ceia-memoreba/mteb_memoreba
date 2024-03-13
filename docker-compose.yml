@@ -4,8 +4,24 @@ services:
     build:
       context: .
       dockerfile: Python.Dockerfile
+      shm_size: '2gb' # shared memory size when building
+    shm_size: '2gb' # shared memory size when running
+    container_name: amanda_memoreba
     volumes:
       - ./code:/mteb-amanda-container/code-container
     environment:
       - PIP_NO_CACHE_DIR=1
+# Para o computador do CEIA: Limitações de CPU e reserva de GPU
+    deploy:
+      resources:
+        limits:
+          memory: 62G
+          cpus: "8.0"
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["5"]
+              capabilities: ["gpu"]
+
+
     
