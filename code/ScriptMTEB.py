@@ -312,9 +312,12 @@ TASK_LIST = (
     + TASK_LIST_STS
 )
 
+import torch
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 for model_name in models_multilingual:
     try:
         model = SentenceTransformer(model_name)
+        model.to(device)
     except Exception as e:
         logger.error(f"Error while evaluating model {model_name}: {e}")
     else:
