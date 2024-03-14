@@ -1,6 +1,8 @@
 from sentence_transformers import SentenceTransformer
 import logging
 
+from mteb_local.evaluation.MTEB import MTEB
+
 from mteb.abstasks.AbsTaskClassification import AbsTaskClassification
 from mteb.abstasks.AbsTaskSTS import AbsTaskSTS
 from mteb.abstasks.AbsTaskRetrieval import AbsTaskRetrieval
@@ -201,7 +203,8 @@ class legal_reranking_content(AbsTaskReranking):
     @property
     def description(self):
         return {
-            "name": "legal_reranking_content",
+            "name": "legal_reranking_content",from mteb.evaluation.MTEB import MTEB
+
             "hf_hub_name": "projetomemoreba/mteb_memoreba_legal_reranking_content",
             "description": (
                 "AskUbuntu Question Dataset - Questions from AskUbuntu with manual annotations marking pairs of"
@@ -237,9 +240,6 @@ class legal_clustering_s2s(AbsTaskClustering):
             "main_score": "v_measure",
             "revision": "9fd2db399e2a88887001cb88d5ac5a03cba36042",
         }
-
-
-from mteb.evaluation.MTEB import MTEB
 
 models = [
     "sentence-transformers/LaBSE",
