@@ -242,91 +242,6 @@ class legal_clustering_s2s(AbsTaskClustering):
 from mteb.evaluation.MTEB import MTEB
 
 models = [
-    "ClayAtlas/winberta-base",
-    "ClayAtlas/winberta-large",
-    "ClayAtlas/windberta-large",
-    "Cohere/Cohere-embed-multilingual-light-v3.0",
-    "Cohere/Cohere-embed-multilingual-v3.0",
-    "EdwardBurgin/paraphrase-multilingual-mpnet-base-v2",
-    "FacebookAI/xlm-roberta-base",
-    "Forbu14/openai_clip_embeddings",
-    "GritLM/GritLM-7B",
-    "GritLM/GritLM-8x7B",
-    "Hum-Works/lodestone-base-4096-v1",
-    "Jechto/e5-dansk-test-0.1",
-    "KB/bert-base-swedish-casedKBLab/electra-small-swedish-cased-discriminator",
-    "KBLab/sentence-bert-swedish-cased",
-    "ManiShankar-AlpesAi/paraphrase-multilingual-mpnet-base-v2-KE_Sieve",
-    "Muennighoff/SGPT-1.3B-weightedmean-msmarco-specb-bitfit",
-    "Muennighoff/SGPT-125M-weightedmean-msmarco-specb-bitfit",
-    "Muennighoff/SGPT-125M-weightedmean-nli-bitfit",
-    "Muennighoff/SGPT-2.7B-weightedmean-msmarco-specb-bitfit",
-    "Muennighoff/SGPT-5.8B-weightedmean-msmarco-specb-bitfit",
-    "Muennighoff/SGPT-5.8B-weightedmean-nli-bitfit",
-    "NbAiLab/nb-bert-base",
-    "NbAiLab/nb-bert-large",
-    "Pristinenlp/alime-embedding-large-zh",
-    "Salesforce/SFR-Embedding-Mistral",
-    "Shimin/LLaMA-embeeding",
-    "Shimin/yiyouliao",
-    "SmartComponents/bge-micro-v2",
-    "TaylorAI/bge-micro",
-    "TaylorAI/bge-micro-v2",
-    "TaylorAI/gte-tiny",
-    "WhereIsAI/UAE-Large-V1",
-    "amu/tao",
-    "amu/tao-8k",
-    "andersonbcdefg/bge-small-4096",
-    "aspire/acge_text_embedding",
-    "avsolatorio/GIST-Embedding-v0",
-    "avsolatorio/GIST-all-MiniLM-L6-v2",
-    "avsolatorio/GIST-large-Embedding-v0",
-    "avsolatorio/GIST-small-Embedding-v0",
-    "bigscience/sgpt-bloom-7b1-msmarco",
-    "biswa921/bge-m3",
-    "consciousAI/cai-lunaris-text-embeddings",
-    "consciousAI/cai-stellaris-text-embeddings",
-    "danish-foundation-models/encoder-large-v1",
-    "deepfile/embedder-100p",
-    "djovak/multi-qa-MiniLM-L6-cos-v1",
-    "facebook/SONAR",
-    "google-bert/bert-base-uncased",
-    "hkunlp/instructor-base",
-    "hkunlp/instructor-large",
-    "hkunlp/instructor-xl",
-    "intfloat/e5-base",
-    "intfloat/e5-base-v2",
-    "intfloat/e5-large",
-    "intfloat/e5-large-v2",
-    "intfloat/e5-mistral-7b-instruct",
-    "intfloat/e5-small",
-    "intfloat/multilingual-e5-base",
-    "intfloat/multilingual-e5-large",
-    "intfloat/multilingual-e5-large-instruct",
-    "intfloat/multilingual-e5-small",
-    "ipipan/silver-retriever-base-v1",
-    "izhx/udever-bloom-1b1",
-    "izhx/udever-bloom-3b",
-    "izhx/udever-bloom-560m",
-    "izhx/udever-bloom-7b1",
-    "jamesgpt1/sf_model_e5",
-    "jonfd/electra-small-nordic",
-    "jspringer/echo-mistral-7b-instruct-lasttoken",
-    "lixsh6/MegatronBert-1B3-embedding",
-    "lixsh6/XLM-0B6-embedding",
-    "lixsh6/XLM-3B5-embedding",
-    "llmrails/ember-v1",
-    "mgoin/all-MiniLM-L6-v2-ds",
-    "mixedbread-ai/mxbai-embed-2d-large-v1",
-    "mixedbread-ai/mxbai-embed-large-v1",
-    "mukaj/fin-mpnet-basev",
-    "nomic-ai/nomic-embed-text-v1",
-    "nomic-ai/nomic-embed-text-v1-ablated",
-    "nomic-ai/nomic-embed-text-v1-unsupervised",
-    "nomic-ai/nomic-embed-text-v1.5",
-    "nthakur/contriever-base-msmarco",
-    "princeton-nlp/sup-simcse-bert-base-uncased",
-    "princeton-nlp/unsup-simcse-bert-base-uncased",
     "sentence-transformers/LaBSE",
     "sentence-transformers/all-MiniLM-L12-v2",
     "sentence-transformers/all-MiniLM-L6-v2",
@@ -346,19 +261,31 @@ models = [
     "sentence-transformers/sentence-t5-large",
     "sentence-transformers/sentence-t5-xl",
     "sentence-transformers/sentence-t5-xxl",
-    "sentosa/ZNV-Embedding",
-    "shibing624/text2vec-base-multilingual",
-    "silk-road/luotuo-bert-medium",
-    "thenlper/gte-base",
-    "thenlper/gte-large",
-    "thenlper/gte-small",
-    "thtang/ALL_862873",
-    "vesteinn/DanskBERT",
-    "vprelovac/universal-sentence-encoder-4",
-    "vprelovac/universal-sentence-encoder-large-5",
-    "vprelovac/universal-sentence-encoder-multilingual-3",
-    "vprelovac/universal-sentence-encoder-multilingual-large-3",
-    "zeroshot/gte-small-quant",
+    "intfloat/e5-base",
+    "intfloat/e5-base-v2",
+    "intfloat/e5-large",
+    "intfloat/e5-large-v2",
+    "intfloat/e5-mistral-7b-instruct",
+    "intfloat/e5-small",
+    "intfloat/multilingual-e5-base",
+    "intfloat/multilingual-e5-large",
+    "intfloat/multilingual-e5-large-instruct",
+    "intfloat/multilingual-e5-small"
+]
+
+models_multilingual = [
+ 'sentence-transformers/LaBSE',
+ 'sentence-transformers/allenai-specter',
+ 'sentence-transformers/average_word_embeddings_glove.6B.300d',
+ 'sentence-transformers/average_word_embeddings_komninos',
+ 'sentence-transformers/distiluse-base-multilingual-cased-v2',
+ 'sentence-transformers/msmarco-bert-co-condensor',
+ 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2',
+ 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2',
+ 'intfloat/multilingual-e5-base',
+ 'intfloat/multilingual-e5-large',
+ 'intfloat/multilingual-e5-large-instruct',
+ 'intfloat/multilingual-e5-small'
 ]
 
 TASK_LIST_CLASSIFICATION = [
@@ -385,17 +312,11 @@ TASK_LIST = (
     + TASK_LIST_STS
 )
 
-for model_name in models:
+for model_name in models_multilingual:
     try:
         model = SentenceTransformer(model_name)
     except Exception as e:
         logger.error(f"Error while evaluating model {model_name}: {e}")
     else:
-        for task in TASK_LIST:
-            try:
-                logger.info(f"Running task: {task}")
-                eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
-                evaluation = MTEB(tasks=[task], task_langs=["pt"])  # Remove "en" for running all languages
-                evaluation.run(model, model_name, output_folder=f"results/{model_name}", eval_splits=eval_splits)
-            except Exception as e:
-                logger.error(f"Error while evaluating {model_name}/{task}: {e}")
+        evaluation = MTEB(tasks=TASK_LIST, task_langs=["pt"])
+        evaluation.run(model, model_name, overwrite_results=True, output_folder=f"results/{model_name}")
