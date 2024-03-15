@@ -11,17 +11,17 @@ services:
       - ./code:/mteb-amanda-container/code-container
     environment:
       - PIP_NO_CACHE_DIR=1
-# Para o computador do CEIA: Limitações de CPU e reserva de GPU
-    # deploy:
-    #   resources:
-    #     limits:
-    #       memory: 62G
-    #       cpus: "8.0"
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           device_ids: ["1"]
-    #           capabilities: ["gpu"]
+Para o computador do CEIA: Limitações de CPU e reserva de GPU
+    deploy:
+      resources:
+        limits:
+          memory: 62G
+          cpus: "8.0"
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["1"]
+              capabilities: ["gpu"]
 
 
     
