@@ -11,6 +11,7 @@ from mteb.abstasks.AbsTaskClustering import AbsTaskClustering
 
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+DEFAULT_PAD_TOKEN = "[PAD]"
 logger = logging.getLogger(__name__)
 
 # # Tasks
@@ -353,7 +354,7 @@ models_multilingual_v3 = [
 ]
 
 TASK_LIST_CLASSIFICATION = [
-    #"Brazilian_court_decisionsClassification",
+    "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
     "HateBR_offensive_levels_Classification",
     "Portuguese_Hate_Speech_binary_Classification",
