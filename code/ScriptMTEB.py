@@ -291,31 +291,34 @@ models_multilingual = [
 ]
 
 models_multilingual_v2 = [
-    'google-bert/bert-base-uncased',
+   'FacebookAI/xlm-roberta-base',
+   'google-bert/bert-base-uncased',
+   'Jechto/e5-dansk-test-0.1',
+   'mukaj/fin-mpnet-base',
+   'nthakur/contriever-base-msmarco',
+   'princeton-nlp/unsup-simcse-bert-base-uncased',
+   'princeton-nlp/sup-simcse-bert-base-uncased',
+   'shibing624/text2vec-base-multilingual',
+   'silk-road/luotuo-bert-medium',
+   'thtang/ALL_862873'
+]
+
+models_multilingual_v3 = [
+    'jspringer/echo-mistral-7b-instruct-lasttoken',
     'facebook/SONAR',
-    'FacebookAI/xlm-roberta-base',
     'EdwardBurgin/paraphrase-multilingual-mpnet-base-v2',
     'djovak/multi-qa-MiniLM-L6-cos-v1',
     'vprelovac/universal-sentence-encoder-multilingual-large-3',
-    'shibing624/text2vec-base-multilingual',
     'vprelovac/universal-sentence-encoder-multilingual-3',
     'vprelovac/universal-sentence-encoder-multilingual-large-3',
     'vprelovac/universal-sentence-encoder-large-5',
     'vprelovac/universal-sentence-encoder-4',
-    'thtang/ALL_862873',
-    'silk-road/luotuo-bert-medium',
     'sentosa/ZNV-Embedding',
-    'Jechto/e5-dansk-test-0.1',
-    'princeton-nlp/unsup-simcse-bert-base-uncased',
-    'princeton-nlp/sup-simcse-bert-base-uncased',
-    'nthakur/contriever-base-msmarco',
     'nomic-ai/nomic-embed-text-v1.5',
-    'mukaj/fin-mpnet-base',
     'mgoin/all-MiniLM-L6-v2-ds',
     'lixsh6/XLM-3B5-embedding',
     'lixsh6/XLM-0B6-embedding',
     'lixsh6/MegatronBert-1B3-embedding',
-    'jspringer/echo-mistral-7b-instruct-lasttoken',
     'jamesgpt1/sf_model_e5',
     'izhx/udever-bloom-7b1',
     'izhx/udever-bloom-1b1',
@@ -344,7 +347,9 @@ models_multilingual_v2 = [
     'Muennighoff/SGPT-125M-weightedmean-nli-bitfit',
     'Muennighoff/SGPT-2.7B-weightedmean-msmarco-specb-bitfit',
     'Muennighoff/SGPT-5.8B-weightedmean-msmarco-specb-bitfit',
-    'Muennighoff/SGPT-5.8B-weightedmean-nli-bitfit'
+    'Muennighoff/SGPT-5.8B-weightedmean-nli-bitfit',
+    'neuralmind/bert-base-portuguese-cased',
+    'neuralmind/bert-large-portuguese-cased'
 ]
 
 TASK_LIST_CLASSIFICATION = [
@@ -373,7 +378,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v2:
+for model_name in models_multilingual_v3:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
