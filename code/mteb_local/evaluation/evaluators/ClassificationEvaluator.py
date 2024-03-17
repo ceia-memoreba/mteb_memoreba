@@ -8,7 +8,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from torch import Tensor
 
 from .Evaluator import Evaluator
-
+DEFAULT_PAD_TOKEN = "[PAD]"
 logger = logging.getLogger(__name__)
 
 
@@ -208,10 +208,10 @@ class logRegClassificationEvaluator(Evaluator):
             verbose=1 if logger.isEnabledFor(logging.DEBUG) else 0,
         )
         logger.info(f"Encoding {len(self.sentences_train)} training sentences...")
-        X_train = np.asarray(model.encode(self.sentences_train, batch_size=self.batch_size))
+        X_train = np.asarray(model.encode(self.sentences_train, batch_size=self.batch_size, pad_token="[PAD]"))
         logger.info(f"Encoding {len(self.sentences_test)} test sentences...")
         if test_cache is None:
-            X_test = np.asarray(model.encode(self.sentences_test, batch_size=self.batch_size))
+            X_test = np.asarray(model.encode(self.sentences_test, batch_size=self.batch_size, pad_token="[PAD]"))
             test_cache = X_test
         else:
             X_test = test_cache
