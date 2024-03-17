@@ -353,7 +353,7 @@ models_multilingual_v3 = [
 ]
 
 TASK_LIST_CLASSIFICATION = [
-    "Brazilian_court_decisionsClassification",
+    #"Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
     "HateBR_offensive_levels_Classification",
     "Portuguese_Hate_Speech_binary_Classification",
