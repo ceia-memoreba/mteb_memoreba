@@ -306,7 +306,8 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'FacebookAI/xlm-roberta-large'
+    'vprelovac/universal-sentence-encoder-multilingual-3',
+    'vprelovac/universal-sentence-encoder-multilingual-large-3"'
 ]
 
 TASK_LIST_CLASSIFICATION = [
