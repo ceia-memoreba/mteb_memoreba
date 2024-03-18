@@ -305,7 +305,7 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'facebook/SONAR'
+    'EdwardBurgin/paraphrase-multilingual-mpnet-base-v2'
 ]
 
 TASK_LIST_CLASSIFICATION = [
