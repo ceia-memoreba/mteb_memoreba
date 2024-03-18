@@ -306,7 +306,8 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'neuralmind/bert-base-portuguese-cased',
+    'google-bert/bert-base-multilingual-cased',
+    'google-bert/bert-base-multilingual-uncased'
 ]
 
 TASK_LIST_CLASSIFICATION = [
