@@ -306,7 +306,8 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-   "neuralmind/bert-large-portuguese-cased"
+    'GritLM/GritLM-7B',
+    'GritLM/GritLM-8x7B',
 ]
 
 TASK_LIST_CLASSIFICATION = [
