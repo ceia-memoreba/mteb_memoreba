@@ -11,7 +11,7 @@ from mteb.abstasks.AbsTaskClustering import AbsTaskClustering
 
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-DEFAULT_PAD_TOKEN = "[PAD]"
+os.environ["DEFAULT_PAD_TOKEN"] = "[PAD]"
 logger = logging.getLogger(__name__)
 
 # # Tasks
