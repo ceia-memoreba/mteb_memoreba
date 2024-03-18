@@ -306,12 +306,10 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'papercup-ai/multilingual-pl-bert',
-    'Geotrend/bert-base-15lang-cased',
-    'Geotrend/bert-base-10lang-cased',
-    'Geotrend/distilbert-base-25lang-cased',
-    'Geotrend/distilbert-base-en-fr-es-pt-it-cased',
-    'kardosdrur/dfm-sentence-encoder-large-v1'
+    'izhx/udever-bloom-7b1',
+    'izhx/udever-bloom-1b1',
+    'izhx/udever-bloom-3b',
+    'izhx/udever-bloom-560m',
 ]
 
 TASK_LIST_CLASSIFICATION = [
