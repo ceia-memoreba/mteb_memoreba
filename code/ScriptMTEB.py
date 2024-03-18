@@ -306,7 +306,7 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-   "sentence-transformers/LaBSE"
+    'neuralmind/bert-base-portuguese-cased',
 ]
 
 TASK_LIST_CLASSIFICATION = [
