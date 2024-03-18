@@ -306,8 +306,12 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'vprelovac/universal-sentence-encoder-multilingual-3',
-    'vprelovac/universal-sentence-encoder-multilingual-large-3"'
+    'papercup-ai/multilingual-pl-bert',
+    'Geotrend/bert-base-15lang-cased',
+    'Geotrend/bert-base-10lang-cased',
+    'Geotrend/distilbert-base-25lang-cased',
+    'Geotrend/distilbert-base-en-fr-es-pt-it-cased',
+    'kardosdrur/dfm-sentence-encoder-large-v1'
 ]
 
 TASK_LIST_CLASSIFICATION = [
