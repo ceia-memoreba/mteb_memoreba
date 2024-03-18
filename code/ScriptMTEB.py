@@ -12,6 +12,7 @@ from mteb.abstasks.AbsTaskClustering import AbsTaskClustering
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["DEFAULT_PAD_TOKEN"] = "[PAD]"
+
 logger = logging.getLogger(__name__)
 
 # # Tasks
@@ -305,7 +306,7 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'EdwardBurgin/paraphrase-multilingual-mpnet-base-v2'
+   "sentence-transformers/LaBSE"
 ]
 
 TASK_LIST_CLASSIFICATION = [
@@ -326,7 +327,8 @@ TASK_LIST_RETRIEVAL = ["faquad_Retrieval"]
 TASK_LIST_STS = ["ASSIN2_STS"]
 
 TASK_LIST = (
-     TASK_LIST_CLUSTERING
+    TASK_LIST_CLASSIFICATION
+    + TASK_LIST_CLUSTERING
     + TASK_LIST_RERANKING
     + TASK_LIST_STS
 )
