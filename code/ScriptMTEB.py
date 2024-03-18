@@ -306,8 +306,11 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'google-bert/bert-base-multilingual-cased',
-    'google-bert/bert-base-multilingual-uncased'
+   "Geotrend/distilbert-base-25lang-cased",
+    "Geotrend/distilbert-base-en-fr-cased",
+   "Geotrend/distilbert-base-en-fr-es-pt-it-cased",
+    "Geotrend/distilbert-base-fr-cased",
+   "distilbert-base-uncased",
 ]
 
 TASK_LIST_CLASSIFICATION = [
