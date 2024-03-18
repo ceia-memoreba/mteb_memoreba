@@ -306,8 +306,7 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'GritLM/GritLM-7B',
-    'GritLM/GritLM-8x7B',
+    'FacebookAI/xlm-roberta-large'
 ]
 
 TASK_LIST_CLASSIFICATION = [
