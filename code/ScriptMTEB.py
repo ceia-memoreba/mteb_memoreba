@@ -306,10 +306,7 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'izhx/udever-bloom-7b1',
-    'izhx/udever-bloom-1b1',
-    'izhx/udever-bloom-3b',
-    'izhx/udever-bloom-560m',
+    'Salesforce/SFR-Embedding-Mistral'
 ]
 
 TASK_LIST_CLASSIFICATION = [
@@ -333,6 +330,7 @@ TASK_LIST = (
     TASK_LIST_CLASSIFICATION
     + TASK_LIST_CLUSTERING
     + TASK_LIST_RERANKING
+    + TASK_LIST_RETRIEVAL
     + TASK_LIST_STS
 )
 
