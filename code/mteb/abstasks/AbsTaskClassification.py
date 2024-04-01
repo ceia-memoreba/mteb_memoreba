@@ -3,7 +3,7 @@ from collections import defaultdict
 
 import numpy as np
 
-from ..evaluation.evaluators import (
+from ..evaluation.evaluators.ClassificationEvaluator import (
     kNNClassificationEvaluator,
     kNNClassificationEvaluatorPytorch,
     logRegClassificationEvaluator,
