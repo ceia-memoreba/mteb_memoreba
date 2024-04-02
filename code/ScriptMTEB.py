@@ -329,7 +329,20 @@ models_multilingual_v3 = [
     'intfloat/e5-large-v2',
     'BAAI/bge-small-en-v1.5',
     'Cohere/Cohere-embed-english-light-v3.0',
-    'nomic-ai/nomic-embed-text-v1.5'
+    'nomic-ai/nomic-embed-text-v1.5',
+    'hkunlp/instructor-xl',
+    'hkunlp/instructor-large'
+]
+
+models_multilingual_v4 = [
+    'intfloat/multilingual-e5-large',
+    'izhx/udever-bloom-3b'
+    'nomic-ai/nomic-embed-text-v1-ablated',
+    'thenlper/gte-small',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'avsolatorio/GIST-all-MiniLM-L6-v2',
+    'hkunlp/instructor-large',
+    'intfloat/e5-base-v2'
 ]
 
 TASK_LIST_CLASSIFICATION = [
