@@ -15,7 +15,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 62G
+          memory: 128G
           cpus: "8.0"
         reservations:
           devices:
