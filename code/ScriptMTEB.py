@@ -306,7 +306,30 @@ models_multilingual_v2 = [
 ]
 
 models_multilingual_v3 = [
-    'Salesforce/SFR-Embedding-Mistral'
+    'Salesforce/SFR-Embedding-Mistral',
+    'GritLM/GritLM-7B',
+    'intfloat/e5-mistral-7b-instruct',
+    'GritLM/GritLM-8x7B',
+    'jspringer/echo-mistral-7b-instruct-lasttoken',
+    'mixedbread-ai/mxbai-embed-large-v1',
+    'mixedbread-ai/mxbai-embed-2d-large-v1',
+    'WhereIsAI/UAE-Large-V1',
+    'Cohere/Cohere-embed-english-v3.0',
+    'intfloat/multilingual-e5-large-instruct',
+    'avsolatorio/GIST-large-Embedding-v0',
+    'BAAI/bge-large-en-v1.5',
+    'llmrails/ember-v1',
+    'jamesgpt1/sf_model_e5',
+    'thenlper/gte-large',
+    'avsolatorio/GIST-small-Embedding-v0',
+    'infgrad/stella-base-en-v2',
+    'thenlper/gte-base',
+    'nomic-ai/nomic-embed-text-v1',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'intfloat/e5-large-v2',
+    'BAAI/bge-small-en-v1.5',
+    'Cohere/Cohere-embed-english-light-v3.0',
+    'nomic-ai/nomic-embed-text-v1.5'
 ]
 
 TASK_LIST_CLASSIFICATION = [
