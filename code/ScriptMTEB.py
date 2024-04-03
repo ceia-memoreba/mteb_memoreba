@@ -372,7 +372,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v3:
+for model_name in models_multilingual_v4:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
