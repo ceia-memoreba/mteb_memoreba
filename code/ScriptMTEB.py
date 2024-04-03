@@ -331,10 +331,7 @@ models_multilingual_v3 = [
     'Cohere/Cohere-embed-english-light-v3.0',
     'nomic-ai/nomic-embed-text-v1.5',
     'hkunlp/instructor-xl',
-    'hkunlp/instructor-large'
-]
-
-models_multilingual_v4 = [
+    'hkunlp/instructor-large',
     'intfloat/multilingual-e5-large',
     'izhx/udever-bloom-3b'
     'nomic-ai/nomic-embed-text-v1-ablated',
@@ -372,7 +369,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v4:
+for model_name in models_multilingual_v3:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
