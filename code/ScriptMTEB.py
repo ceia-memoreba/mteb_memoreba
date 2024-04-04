@@ -342,6 +342,11 @@ models_multilingual_v3 = [
     'intfloat/e5-base-v2'
 ]
 
+models_multilingual_v4 = [
+    'GritLM/GritLM-7B',
+    'GritLM/GritLM-8x7B'
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -369,7 +374,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v3:
+for model_name in models_multilingual_v4:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
