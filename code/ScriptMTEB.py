@@ -362,6 +362,26 @@ models_multilingual_v5 = [
     'intfloat/multilingual-e5-large'
 ]
 
+models_multilingual_v6 = [
+    'zhou-xl/bi-cse',
+    'zeroshot/gte-small-quant',
+    'zeroshot/gte-large-sparse',
+    'neuralmagic/bge-base-en-v1.5-quant',
+    'mgoin/all-MiniLM-L6-v2-ds',
+    'neuralmagic/bge-large-en-v1.5-quant',
+    'neuralmagic/bge-base-en-v1.5-sparse',
+    'neuralmagic/bge-small-en-v1.5-sparse',
+    'sentence-transformers/distiluse-base-multilingual-cased-v2',
+    'jinaai/jina-embeddings-v2-base-de',
+    'jinaai/jina-embeddings-v2-base-es',
+    'consciousAI/cai-lunaris-text-embeddings',
+    'consciousAI/cai-stellaris-text-embeddings',
+    'aws-neuron/bge-base-en-v1-5-seqlen-384-bs-1',
+    'Shimin/yiyouliao',
+    'Shimin/LLaMA-embeeding',
+    'ManiShankar-AlpesAi/paraphrase-multilingual-mpnet-base-v2-KE_Sieve'
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -389,7 +409,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v5:
+for model_name in models_multilingual_v6:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
