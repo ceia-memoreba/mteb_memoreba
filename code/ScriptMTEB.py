@@ -347,6 +347,21 @@ models_multilingual_v4 = [
     'GritLM/GritLM-8x7B'
 ]
 
+models_multilingual_v5 = [
+    'intfloat/e5-large',
+    'nomic-ai/nomic-embed-text-v1-ablated',
+    'thenlper/gte-small',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'izhx/udever-bloom-7b1',
+    'intfloat/e5-base',
+    'jinaai/jina-embeddings-v2-base-en',
+    'Cohere/Cohere-embed-multilingual-light-v3.0',
+    'intfloat/e5-small-v2',
+    'izhx/udever-bloom-3b',
+    'nomic-ai/nomic-embed-text-v1-unsupervised',
+    'intfloat/multilingual-e5-large'
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -374,7 +389,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v4:
+for model_name in models_multilingual_v5:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
