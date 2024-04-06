@@ -20,8 +20,6 @@ logger = logging.getLogger(__name__)
 # ## Classification
 
 # - Brazilian_court_decisionsClassification
-
-
 class Brazilian_court_decisionsClassification(AbsTaskClassification):
     @property
     def description(self):
@@ -43,8 +41,6 @@ class Brazilian_court_decisionsClassification(AbsTaskClassification):
 
 
 # - HateBR_offensive_binary
-
-
 class HateBR_offensive_binary_Classification(AbsTaskClassification):
     @property
     def description(self):
@@ -245,6 +241,27 @@ class legal_clustering_s2s(AbsTaskClustering):
             "revision": "9fd2db399e2a88887001cb88d5ac5a03cba36042",
         }
 
+
+class legal_clustering_p2p(AbsTaskClustering):
+    @property
+    def description(self):
+        return {
+            "name": "legal_clustering_s2s",
+            "hf_hub_name": "projetomemoreba/mteb_memoreba_legal_clustering_s2s",
+            "description": (
+                "Clustering of titles from arxiv. Clustering of 30 sets, either on the main or secondary category"
+            ),
+            "reference": "https://www.kaggle.com/Cornell-University/arxiv",
+            "type": "Clustering",
+            "category": "p2p",
+            "eval_splits": ["test"],
+            "eval_langs": ["pt"],
+            "main_score": "v_measure",
+            "revision": "9fd2db399e2a88887001cb88d5ac5a03cba36042",
+        }
+
+
+
 models = [
     "sentence-transformers/LaBSE",
     "sentence-transformers/all-MiniLM-L12-v2",
@@ -403,18 +420,20 @@ TASK_LIST = (
     TASK_LIST_CLASSIFICATION
     + TASK_LIST_CLUSTERING
     + TASK_LIST_RERANKING
-    + TASK_LIST_RETRIEVAL
     + TASK_LIST_STS
 )
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 for model_name in models_multilingual_v6:
-    try:
-        model = SentenceTransformer(model_name)
-        model.to(device)
-    except Exception as e:
-        logger.error(f"Error while evaluating model {model_name}: {e}")
-    else:
-        evaluation = MTEB(tasks=TASK_LIST, task_langs=["pt"])
-        evaluation.run(model, model_name, overwrite_results=True, output_folder=f"results/{model_name}")
+    for task in TASK_LIST:
+        logger.info(f"Running task: {task}")
+        eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
+        try:
+            model = SentenceTransformer(model_name)
+            model.to(device)
+        except Exception as e:
+            logger.error(f"Error while evaluating model {model_name}: {e}")
+        else:
+            evaluation = MTEB(tasks=[task], task_langs=["pt"])
+            evaluation.run(model, model_name, overwrite_results=True, output_folder=f"results/{model_name}", eval_splits=eval_splits)
