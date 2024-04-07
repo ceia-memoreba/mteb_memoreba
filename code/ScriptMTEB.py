@@ -400,7 +400,6 @@ models_multilingual_v6 = [
 ]
 
 models_multilingual_v7 = [
-    'GritLM/GritLM-8x7B',
     'lixsh6/XLM-0B6-embedding',
     'jinaai/jina-embeddings-v2-small-en',
     'Muennighoff/SGPT-1.3B-weightedmean-msmarco-specb-bitfit',
@@ -442,16 +441,16 @@ TASK_LIST = (
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 for model_name in models_multilingual_v7:
-    for task in TASK_LIST:
-        logger.info(f"Running task: {task}")
-        logger.info(f"Model: {model_name}")
-        eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
-        try:
-            model = SentenceTransformer(model_name)
-            model.to(device)
-        except Exception as e:
-            logger.error(f"Error while model {model_name}: {e}")
-        else:
+    try:
+        model = SentenceTransformer(model_name)
+        model.to(device)
+    except Exception as e:
+        logger.error(f"Error while model {model_name}: {e}")
+    else:
+        for task in TASK_LIST:
+            logger.info(f"Running task: {task}")
+            logger.info(f"Model: {model_name}")
+            eval_splits = ["dev"] if task == "MSMARCO" else ["test"]
             try:
                 evaluation = MTEB(tasks=[task], task_langs=["pt"])
                 evaluation.run(model, model_name, overwrite_results=True, output_folder=f"results/{model_name}", eval_splits=eval_splits)
