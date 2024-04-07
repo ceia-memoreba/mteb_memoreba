@@ -399,6 +399,22 @@ models_multilingual_v6 = [
     'ManiShankar-AlpesAi/paraphrase-multilingual-mpnet-base-v2-KE_Sieve'
 ]
 
+models_multilingual_v7 = [
+    'GritLM/GritLM-8x7B',
+    'lixsh6/XLM-0B6-embedding',
+    'jinaai/jina-embeddings-v2-small-en',
+    'Muennighoff/SGPT-1.3B-weightedmean-msmarco-specb-bitfit',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'izhx/udever-bloom-560mizhx/udever-bloom-7b1',
+    'TaylorAI/bge-micro',
+    'Muennighoff/SGPT-5.8B-weightedmean-nli-bitfit',
+    'djovak/multi-qa-MiniLM-L6-cos-v1',
+    'sentence-transformers/average_word_embeddings_glove.6B.300d',
+    'facebook/SONAR',
+    'sentence-transformers/average_word_embeddings_komninos',
+    'sentence-transformers/LaBSE'
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -425,7 +441,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v6:
+for model_name in models_multilingual_v7:
     for task in TASK_LIST:
         logger.info(f"Running task: {task}")
         logger.info(f"Model: {model_name}")
