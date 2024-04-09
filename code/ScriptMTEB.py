@@ -278,10 +278,7 @@ models = [
     "sentence-transformers/msmarco-bert-co-condensor",
     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
     "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
-    "sentence-transformers/sentence-t5-base",
-    "sentence-transformers/sentence-t5-large",
-    "sentence-transformers/sentence-t5-xl",
-    "sentence-transformers/sentence-t5-xxl",
+    
     "intfloat/e5-base",
     "intfloat/e5-base-v2",
     "intfloat/e5-large",
@@ -424,6 +421,13 @@ models_multilingual_v8 = [
 'FacebookAI/xlm-roberta-large'
 ]
 
+models_multilingual_v9 = [
+    "sentence-transformers/sentence-t5-base",
+    "sentence-transformers/sentence-t5-large",
+    "sentence-transformers/sentence-t5-xl",
+    "sentence-transformers/sentence-t5-xxl",
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -450,7 +454,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v8:
+for model_name in models_multilingual_v9:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
