@@ -414,6 +414,16 @@ models_multilingual_v7 = [
     'sentence-transformers/LaBSE'
 ]
 
+models_multilingual_v8 = [
+'Muennighoff/SGPT-125M-weightedmean-msmarco-specb-bitfit',
+'princeton-nlp/unsup-simcse-bert-base-uncased',
+'FacebookAI/xlm-roberta-base',
+'vprelovac/universal-sentence-encoder-multilingual-3',
+'vprelovac/universal-sentence-encoder-multilingual-large-3',
+'zeroshot/gte-large-quant',
+'FacebookAI/xlm-roberta-large'
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -440,7 +450,7 @@ TASK_LIST = (
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-for model_name in models_multilingual_v7:
+for model_name in models_multilingual_v8:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
