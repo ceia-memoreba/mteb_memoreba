@@ -428,6 +428,10 @@ models_multilingual_v9 = [
     "sentence-transformers/sentence-t5-xxl",
 ]
 
+models_multilingual_v10 = [
+'GritLM/GritLM-8x7B'
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
@@ -459,7 +463,7 @@ else:
     print("Cuda não está disponível. CPU será usada.")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-for model_name in models_multilingual_v9:
+for model_name in models_multilingual_v10:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
