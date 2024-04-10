@@ -453,7 +453,12 @@ TASK_LIST = (
 )
 
 import torch
+if torch.cuda.is_available():
+    print("Cuda está disponível. GPU será usada.")
+else:
+    print("Cuda não está disponível. CPU será usada.")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 for model_name in models_multilingual_v9:
     try:
         model = SentenceTransformer(model_name)
