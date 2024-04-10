@@ -321,9 +321,7 @@ models_multilingual_v2 = [
 
 models_multilingual_v3 = [
     'Salesforce/SFR-Embedding-Mistral',
-    'GritLM/GritLM-7B',
     'intfloat/e5-mistral-7b-instruct',
-    'GritLM/GritLM-8x7B',
     'jspringer/echo-mistral-7b-instruct-lasttoken',
     'mixedbread-ai/mxbai-embed-large-v1',
     'mixedbread-ai/mxbai-embed-2d-large-v1',
@@ -463,7 +461,7 @@ else:
     print("Cuda não está disponível. CPU será usada.")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-for model_name in models_multilingual_v10:
+for model_name in models_multilingual_v3:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
