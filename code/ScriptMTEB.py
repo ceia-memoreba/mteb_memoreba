@@ -477,6 +477,26 @@ models_multilingual_v10 = [
     'lixsh6/XLM-0B6-embedding'
 ]
 
+models_multilingual_v10 = [
+    'sentence-transformers/all-mpnet-base-v2',
+    'bigscience/sgpt-bloom-7b1-msmarco',
+    'jinaai/jina-embedding-l-en-v1',
+    'Muennighoff/SGPT-2.7B-weightedmean-msmarco-specb-bitfit',
+    'lixsh6/MegatronBert-1B3-embedding',
+    'McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-unsup-simcse',
+    'TaylorAI/bge-micro-v2',
+    'sentence-transformers/all-MiniLM-L12-v2',
+    'sentence-transformers/all-MiniLM-L6-v2',
+    'jinaai/jina-embedding-b-en-v1',
+    'sentence-transformers/gtr-t5-base',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'nthakur/contriever-base-msmarco',
+    'izhx/udever-bloom-560m',
+    'andersonbcdefg/bge-small-4096',
+    'Hum-Works/lodestone-base-4096-v1',
+    'djovak/multi-qa-MiniLM-L6-cos-v1',
+]
+
 TASK_LIST_CLASSIFICATION = [
     "Brazilian_court_decisionsClassification",
     "HateBR_offensive_binary_Classification",
