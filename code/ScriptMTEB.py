@@ -427,7 +427,54 @@ models_multilingual_v9 = [
 ]
 
 models_multilingual_v10 = [
-'GritLM/GritLM-8x7B'
+    'intfloat/e5-mistral-7b-instruct',
+    'McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-supervised ',
+    'jspringer/echo-mistral-7b-instruct-lasttoken',
+    'WhereIsAI/UAE-Large-V1',
+    'Cohere/Cohere-embed-english-v3.0',
+    'avsolatorio/GIST-large-Embedding-v0',
+    'BAAI/bge-large-en-v1.5',
+    'McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-supervised',
+    'Cohere/Cohere-embed-multilingual-v3.0',
+    'avsolatorio/GIST-Embedding-v0',
+    'BAAI/bge-base-en-v1.5',
+    'llmrails/ember-v1',
+    'jamesgpt1/sf_model_e5',
+    'thenlper/gte-large',
+    'avsolatorio/GIST-small-Embedding-v0',
+    'infgrad/stella-base-en-v2',
+    'thenlper/gte-base',
+    'nomic-ai/nomic-embed-text-v1',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'intfloat/e5-large-v2',
+    'BAAI/bge-small-en-v1.5',
+    'Cohere/Cohere-embed-english-light-v3.0',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-supervised',
+    'hkunlp/instructor-xl',
+    'hkunlp/instructor-large',
+    'intfloat/e5-base-v2',
+    'ildodeltaRule/multilingual-e5-large',
+    'nomic-ai/nomic-embed-text-v1-ablated',
+    'thenlper/gte-small',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'izhx/udever-bloom-7b1',
+    'intfloat/e5-base',
+    'Cohere/Cohere-embed-multilingual-light-v3.0',
+    'intfloat/e5-small-v2',
+    'izhx/udever-bloom-3b',
+    'nomic-ai/nomic-embed-text-v1-unsupervised',
+    'hkunlp/instructor-base',
+    'hkunlp/instructor-base',
+    'nomic-ai/nomic-embed-text-v1.5',
+    'lixsh6/XLM-3B5-embedding',
+    'avsolatorio/GIST-all-MiniLM-L6-v2',
+    'sentence-transformers/gtr-t5-xxl',
+    'TaylorAI/gte-tiny',
+    'sentence-transformers/gtr-t5-xl',
+    'izhx/udever-bloom-1b1',
+    'sentence-transformers/gtr-t5-large',
+    'lixsh6/XLM-0B6-embedding'
 ]
 
 TASK_LIST_CLASSIFICATION = [
@@ -461,7 +508,7 @@ else:
     print("Cuda não está disponível. CPU será usada.")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-for model_name in models_multilingual_v3:
+for model_name in models_multilingual_v10:
     try:
         model = SentenceTransformer(model_name)
         model.to(device)
