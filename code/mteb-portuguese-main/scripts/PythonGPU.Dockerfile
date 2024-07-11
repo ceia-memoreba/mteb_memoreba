@@ -16,10 +16,10 @@ RUN apt-get update && \
 WORKDIR /mteb-amanda-container
 
 # Copiar os requirements para o container
-COPY ./requirements.txt ./
+#COPY ./requirements.txt ./
 
 # Instalar pacotes especificados nos requirements
-RUN python3 -m pip install -r requirements.txt
+#RUN python3 -m pip install -r requirements.txt
 
 # Upgrade pip
 RUN python3 -m pip install --upgrade pip
@@ -34,4 +34,4 @@ COPY ./ ./
 WORKDIR /mteb-amanda-container/code-container
 
 # Set the entrypoint
-ENTRYPOINT ["python3","ScriptMTEB.py"]
+ENTRYPOINT ["python3","run_mteb_portuguese_a100.py"]
