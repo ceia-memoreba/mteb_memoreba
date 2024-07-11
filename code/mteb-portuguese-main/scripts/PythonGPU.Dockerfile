@@ -33,5 +33,6 @@ COPY ./ ./
 # Entrar na pasta code-container
 WORKDIR /mteb-amanda-container/code-container
 
+COPY mteb-poruguese-main/scripts/run_mteb_portuguese_a100.py ./
 # Set the entrypoint
 ENTRYPOINT ["python3","run_mteb_portuguese_a100.py"]
