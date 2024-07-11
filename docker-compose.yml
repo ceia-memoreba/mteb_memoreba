@@ -20,5 +20,5 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              device_ids: ["0"] # especificar aqui o ID da GPU
+              device_ids: ["6"] # especificar aqui o ID da GPU
               capabilities: ["gpu"]
